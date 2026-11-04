@@ -1,0 +1,38 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Taniti Island</title>
+  <meta name="description" content="Come visit our amazing island!">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+        <button class="menu-toggle"
+            onclick="menuToggle(this)">
+            ☰
+    </button>
+    <nav id="nav-menu">
+    <ul>
+      <li><a href="index.html"><span class="page-highlight">Home</span></a></li>
+      <li><a href="attractions.html">Attractions</a></li>
+      <li><a href="lodging.html">Lodging</a></li>
+      <li><a href="resturants.html">Resturants</a></li>
+      <li><a href="transportation.html">Transportation</a></li>
+
+    </ul>
+  </nav>
+  </header>
+
+  <footer>
+  </footer>
+  <script>
+function menuToggle(button) {
+    const nav = document.getElementById("nav-menu");
+    const isOpen = nav.classList.toggle("active");
+    button.textContent = isOpen ? "✕" : "☰";
+}
+</script>
+</body>
+</html>
