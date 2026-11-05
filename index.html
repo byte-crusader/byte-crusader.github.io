@@ -3,12 +3,18 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Taniti Island</title>
+  <title>Tanitian Island</title>
   <meta name="description" content="Come visit our amazing island!">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
+        <img class="header-img" src="header.jpg" >
+
+    <div class="image-text">
+        <h1>Welcome to Taniti</h1>
+        <p>Come explore the Tanitian island!</p>
+    </div>
         <button class="menu-toggle"
             onclick="menuToggle(this)">
             ☰
@@ -24,7 +30,52 @@
     </ul>
   </nav>
   </header>
+<main>
+  <div class="intro-head">
+    <p>Taniti is a small, tropical island in the Pacific. While the island has an area of less than 500 square miles, the terrain is varied and includes both sandy and rocky beaches, a small but safe harbor, lush tropical rainforests, and a mountainous interior that includes a small, active volcano.</p>
+  </div>
+<div class="slideshow">
+    <div class="slide-text">
+        <p></p>
+    </div>
 
+    <img id="slide" src="image1.jpg">
+
+    <button class="btn1" onclick="prev()"><</button>
+    <button class="btn2" onclick="next()">></button>
+
+</div>
+  <h2><a href="">Popular Lodging Options!</a></h2>
+
+<div class="hotel-listings">
+
+  <div id="listing" class="listing1">
+    <img src="pearl.jpg">
+    <h3>Tahiti Pearl Beach Resort</h3>
+    <h4>Price: $780 Per night</h4>
+    <p>Make your escape to the tranquil Tahiti Pearl Beach Resort, which offers outstanding comfort and spectacular waterfront views in the lush, tropical surroundings of the 900-metre-long (half-mile long) Lafayette Beach. With its stunning oceanfront location on historic Matavai Bay, this destination resort offers easy access to a wealth of activities and attractions.</p>
+      <button href="#" class="hotel-button">View Hotel</button>
+  </div>
+  <div id="listing" class="listing2">
+    <img src="reva.jpg">
+    <h3>Hôtel Reva Tahiti</h3>
+    <h4>Price: $380 Per night</h4>
+    <p>Welcome to Hôtel Reva Tahiti, your contemporary address in the heart of Papeete. Ideally located just steps from the waterfront, the market, and ferries to Moorea, our hotel combines modern comfort with Polynesian charm. Our air-conditioned rooms and studios offer space, quality bedding, a kitchenette (depending on the category), and some feature a terrace. Enjoy a tropical or continental breakfast each morning before setting out to explore the capital on foot.</p>
+      <button href="#" class="hotel-button">View Hotel</button>
+  </div>
+  <div id="listing" class="listing3">
+    <img src="tiki.jpg">
+    <h3>Boutique Hotel Kon Tiki Tahiti</h3>
+    <h4>Price: $180 Per night</h4>
+    <p>The Kon Tiki TAHITI has a history of travel just from the mention of its name. Once a boat, then a hotel, today it has a new architecture. Rooted in Ma'ohi culture, its residents will experience a total immersion. In the heart of the Pape'ete of yesteryear, opposite the waterfront ferry dock, the retro charm of this singular hotel makes it a suspended parenthesis outside time.</p>
+      <button href="#" class="hotel-button">View Hotel</button>
+  </div>
+
+
+
+</div>
+
+</main>
   <footer>
   </footer>
   <script>
@@ -32,6 +83,39 @@ function menuToggle(button) {
     const nav = document.getElementById("nav-menu");
     const isOpen = nav.classList.toggle("active");
     button.textContent = isOpen ? "✕" : "☰";
+}
+
+const images = [
+    "image1.jpg",
+    "image2.webp",
+    "image3.jpg"
+];
+
+let currentImage = 0;
+
+function show() {
+    document.getElementById("slide").src =
+        images[currentImage];
+}
+
+function next() {
+    currentImage++;
+
+    if (currentImage >= images.length) {
+        currentImage = 0;
+    }
+
+    show();
+}
+
+function prev() {
+    currentImage--;
+
+    if (currentImage < 0) {
+        currentImage = images.length - 1;
+    }
+
+    show();
 }
 </script>
 </body>

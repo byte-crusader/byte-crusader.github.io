@@ -19,7 +19,6 @@ img {
     height: auto;
 }
 
-
 .menu-toggle {
     display: flex;
     justify-content: center;
@@ -32,15 +31,13 @@ img {
     white-space: normal;
     overflow-wrap: anywhere;
     position: absolute;
-    /*bottom:0;*/
+    bottom:0;
     left:0;
     z-index: 1002;
     color: #FFD84D;
-    background: #FFD84D;
+    background: white;
     color: #1B2A41;
     border: 2px solid #6699CC;
-    border-radius: 0.75rem;
-
     font-size: 1.6rem;
     transition: background 0.2s, transform 0.2s;
 
@@ -56,14 +53,16 @@ img {
 .menu-toggle:active {
     transform: scale(0.96);
 }
+/*NAVIGATION*/
 nav {
     display: none;
     z-index: 1001;
     position: absolute;
-    bottom: -266px;
+    bottom: -227px;
     background-color: #003B6D;
     width: 100%;
-    border-radius: 0.75rem;
+    /*border-radius: 0.75rem;*/
+    border: black 1px solid;
 
 }
 
@@ -82,7 +81,7 @@ nav li:last-child {
 
 nav a {
     display: block;
-    color: #BDBDBD;
+    color: white;
     text-decoration: none;
     border-radius: 4px;
     padding:.3rem;
@@ -100,6 +99,125 @@ nav a:focus-visible {
 	display: block;
 }
 
+.header-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+}
+
+.image-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.image-text h1 {
+    font-size: 3rem;
+}
+
+.image-text p {
+    font-size: 1.2rem;
+}
+
+/*SLIDESHOW*/
+.slideshow {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.slideshow img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
+.slideshow button {
+    position: absolute;
+    top: 50%;
+    padding: 10px;
+    cursor: pointer;
+}
+.slide-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+.btn1 {
+    left: 0;
+}
+
+.btn2 {
+    right: 0;
+}
+/*HOTEL LISTINGS*/
+
+#listing{
+    border:solid black 1px;
+    background-color: white;
+    margin:1rem;
+    padding: 1rem;
+    width: 25%;
+      display: flex;
+  flex-direction: column;
+min-width:300px;
+}
+#listing img{
+    height:200px;
+    margin-bottom:.5rem;
+        /*object-fit: contain;*/
+}
+#listing h3 {
+  color: #2e4a62;
+  font-size: 1.3rem;
+  margin: 0 0 0.75rem;
+}
+
+#listing h4 {
+  color: #3c8d8a;
+  font-size: 1.2rem;
+  margin: 0 0 1rem;
+}
+#listing p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+
+.hotel-button {
+  display: inline-block;
+  text-align: center;
+  background: #2e4a62;
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 6px;
+  margin-top: auto;
+  transition: background 0.3s ease;
+}
+.hotel-listings{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+        /*align-items: stretch;*/
+}
+.hotel-button:hover {
+  background: #3c8d8a;
+}
+
 footer{
 	display: flex;
 	flex-direction: column;
@@ -110,9 +228,10 @@ footer{
 }
 footer img{
 	width: 50%;
+
 }
 
-@media (min-width: 600px) {
+@media (min-width: 700px) {
     .menu-toggle {
         display: none;
     }
@@ -127,5 +246,11 @@ footer img{
     }
     nav li {
     	border:none;
+    }
+    .hotel-listings{
+        flex-direction: row;
+        align-items: stretch;
+
+
     }
 }
