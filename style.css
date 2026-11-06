@@ -147,8 +147,8 @@ nav a:focus-visible {
 }
 .slide-text {
     position: absolute;
-    top: 80%;
-    left: 20%;
+    top: 70%;
+    left: 35%;
     transform: translate(-50%, -50%);
 
     color: white;
