@@ -13,6 +13,7 @@
 
     <div class="image-text">
         <h1>Welcome to Taniti</h1>
+        
         <p>Come explore the Tanitian island!</p>
     </div>
         <button class="menu-toggle"
@@ -36,7 +37,7 @@
   </div>
 <div class="slideshow">
     <div class="slide-text">
-        <p></p>
+        <p id="p-text"></p>
     </div>
 
     <img id="slide" src="image1.jpg">
@@ -45,7 +46,7 @@
     <button class="btn2" onclick="next()">></button>
 
 </div>
-  <h2><a href="">Popular Lodging Options!</a></h2>
+  <h2 class="listing-head"><a href="">Popular Lodging Options!</a></h2>
 
 <div class="hotel-listings">
 
@@ -77,6 +78,8 @@
 
 </main>
   <footer>
+        <img class="footer-img" src="TahitiFlag.jpg">
+
   </footer>
   <script>
 function menuToggle(button) {
@@ -90,12 +93,19 @@ const images = [
     "image2.webp",
     "image3.jpg"
 ];
+const texts = [
+"Teahitia Volcano",
+"Vaiava Beach, Puna'auia",
+"Taniti Rainforest"
+]
 
 let currentImage = 0;
+document.getElementById("p-text").textContent = texts[currentImage];
 
 function show() {
     document.getElementById("slide").src =
         images[currentImage];
+    document.getElementById("p-text").textContent = texts[currentImage];
 }
 
 function next() {
