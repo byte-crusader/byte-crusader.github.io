@@ -1,0 +1,116 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tanitian Island</title>
+  <meta name="description" content="Come visit our amazing island!">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+        <img class="header-img" src="header.jpg" >
+
+    <div class="image-text">
+        <h1>Welcome to Taniti</h1>
+        
+        <p>Come explore the Tanitian island!</p>
+    </div>
+        <button class="menu-toggle"
+            onclick="menuToggle(this)">
+            ☰
+    </button>
+    <nav id="nav-menu">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="attractions.html"><span class="page-highlight">Attractions</span></a></li>
+      <li><a href="lodging.html">Lodging</a></li>
+      <li><a href="resturants.html">Resturants</a></li>
+      <li><a href="transportation.html">Transportation</a></li>
+
+    </ul>
+  </nav>
+  </header>
+<main>
+    <h2 class="listing-head"><a href="">Come explore the island!</a></h2>
+  <div class="intro-head">
+    <p>
+Discover everything Taniti has to offer, from beautiful tropical beaches to adventurous rainforests. Whether you enjoy relaxing by the ocean, exploring nature, or experiencing local culture, there is something for everyone.</p>
+  </div>
+
+<div class="hotel-listings">
+
+  <div id="listing" class="listing1">
+    <img src="beach-page.jpg">
+    <h3>Tropical Beaches</h3>
+    <p>Relax along Taniti's beautiful sandy beaches surrounding Yellow Leaf Bay. Visitors can enjoy swimming, snorkeling, sunbathing, and exploring the island's coastline.</p>
+  </div>
+  <div id="listing" class="listing2">
+    <img src="rainforest-page.jpg">
+    <h3>Rainforest Adventures</h3>
+    <p>looking for something more adventurous, rainforest zip lining offers a unique way to experience the island's natural beauty.</p>
+  </div>
+  <div id="listing" class="listing3">
+    <img src="volcano-page.jpg">
+    <h3>The Active Volcano</h3>
+    <p>Come visit the mountain ranges and discover the active volcano, heliptoper rides are an amzing way to experience the sites.</p>
+  </div>
+
+
+
+</div>
+
+</main>
+  <footer>
+        <img class="footer-img" src="TahitiFlag.jpg">
+
+  </footer>
+  <script>
+function menuToggle(button) {
+    const nav = document.getElementById("nav-menu");
+    const isOpen = nav.classList.toggle("active");
+    button.textContent = isOpen ? "✕" : "☰";
+}
+
+const images = [
+    "image1.jpg",
+    "image2.webp",
+    "image3.jpg"
+];
+const texts = [
+"Teahitia Volcano",
+"Vaiava Beach, Puna'auia",
+"Taniti Rainforest"
+]
+
+let currentImage = 0;
+document.getElementById("p-text").textContent = texts[currentImage];
+
+function show() {
+    document.getElementById("slide").src =
+        images[currentImage];
+    document.getElementById("p-text").textContent = texts[currentImage];
+}
+
+function next() {
+    currentImage++;
+
+    if (currentImage >= images.length) {
+        currentImage = 0;
+    }
+
+    show();
+}
+
+function prev() {
+    currentImage--;
+
+    if (currentImage < 0) {
+        currentImage = images.length - 1;
+    }
+
+    show();
+}
+</script>
+</body>
+</html>
